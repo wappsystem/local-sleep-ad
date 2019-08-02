@@ -1,5 +1,5 @@
 #D__ID .formbox h3 {
-    font-family: 'Open Sans';
+    font-family: 'Roboto Slab';
     font-size: 24px;
     color: #FCFBF5;
     letter-spacing: 0;
@@ -10,7 +10,7 @@
     margin-top: -5px
 }
 #D__ID .formbox h7 {
-    font-family: 'Open Sans';
+    font-family: 'Roboto Slab';
     font-size: 16px;
     color: #FCFBF5;
     letter-spacing: 0;
@@ -29,27 +29,27 @@
     border-bottom: 1px solid #E5EEF0 !important 
 }
 #D__ID .form-group h4 {
-    font-family: 'Open Sans';
+    font-family: 'Roboto Slab';
     font-size: 16px;
     color: #00263A;
     letter-spacing: 0;
     line-height: 28px;
 }
 #D__ID .form-group h6 {
-    font-family: 'Open Sans';
+    font-family: 'Roboto Slab';
     font-size: 14px;
     color: #00263A;
     letter-spacing: 0;
     line-height: 28px;
 }
 #D__ID .small-label {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-weight:600;
     font-size: 14px;
     color: #444645;
 }
 #D__ID label {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-weight:600;
     font-size: 14px;
     color: #444645;
@@ -77,7 +77,7 @@
 #D__ID .btn-primary, #D__ID .btn-primary:active, #D__ID .btn-primary:visited, #D__ID .btn-primary:focus {
     background-color: #00263A;
     border-color: #00263A;
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-weight: lighter;
     font-size: 12px;
     letter-spacing: 1px;
@@ -92,7 +92,7 @@
 #D__ID .btn-primary:hover {
     background-color: #506A88;
     border-color: #506A88;
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-weight: lighter;
     font-size: 12px;
     letter-spacing: 1px;
@@ -105,7 +105,7 @@
     margin: 15px;
 }
 #D__ID .btn-outline-light {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-weight: lighter;
     font-size: 12px;
     letter-spacing: 1px;
@@ -119,10 +119,10 @@
     padding-right: 25px
 }
 #D__ID .btn-outline-light:hover {
-    color: #D09142;
+    color: #EA7859;
 }
 #D__ID p.note {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-weight: lighter;
     font-size: 16px;
     color: #939597;
@@ -159,7 +159,7 @@
     background-color: #506A88;
 }
 #D__ID .radiobuttons input:checked ~ .checkmark {
-    background-color: #D09142;
+    background-color: #EA7859;
 }
 #D__ID .checkmark:after {
     content: "";
@@ -212,7 +212,7 @@
     background-color: #506A88;
 }
 #D__ID .checkboxes input:checked ~ .check_checkmark {
-    background-color: #D09142;
+    background-color: #EA7859;
 }
 #D__ID .check_checkmark:after {
     content: "";
@@ -231,37 +231,37 @@
     content:"✔";
 }
 #D__ID .form-group input[type=text] {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID .form-group input[type=tel] {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID .form-group input[type=email] {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID .form-group input[type=number] {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID .form-group select {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID .form-group textarea {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-size: 16px;
     color: #6D6F72;
 }
 #D__ID fieldset.subquestions legend {
-    font-family: 'Open Sans';
+    font-family: 'Nunito Sans';
     font-size: 16px;
     color: #00263A;
     line-height: 21px;
@@ -288,15 +288,15 @@
         margin-left:0;
     }
 }
-@media (min-width: 992px) {
-    .container {max-width:1140px}
+@media (min-width: 1200px) {
+    .container {max-width:900px}
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
     .container {max-width:900px}
 }
 @media (min-width: 768px) {
     .container {max-width:900px}
 }
-@media (min-width: 1200px) {
-    .container {max-width:1140px}
+@media (min-width: 576px) {
+    .container {max-width:900px}
 }

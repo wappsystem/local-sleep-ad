@@ -1,10 +1,11 @@
 <div id=D__ID>
     <div>
-        <div class=vm-mobile>
-            <div class=vm-logo-image-small></div>
-        </div>
-        <div class=vm-desk-logo>
-            <div class=vm-logo-image></div>
+        <div id=header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container"> 
+                    <a id=logo_0 style='cursor:pointer'><img src="images/sleep-local-logo.png" width="auto" height="90px" alt=""></a>
+                </div>
+            </nav>
         </div>
     </div>
     <script>
@@ -12,24 +13,55 @@
         $('#vm-mobile_title').on('click',function(){ $vm.load_module('home',$vm.root_layout_content_slot,{}) })
         $('.vm-desk-logo').on('click',function(){ $vm.load_module('home',$vm.root_layout_content_slot,{}) })
         //------------------------------------
+        $('.vm-dropdown').on('click',function(e){
+            var d=$(this).find('.vm-dropdown-content');
+            if(d.css('display')=='block') d.css('display','none');
+            else d.css('display','block');
+        })
+        $(".vm-dropdown").mouseleave(function (){  $(".vm-dropdown-content").hide();  })
+        $(".vm-dropdown-content").mouseleave(function (){  $(this).hide();  })
+        $vm.toggle=function() {
+            var x = document.getElementById("vm-menu");
+            if(x.className==='') x.className="responsive";
+            else x.className="";
+        }
+        //------------------------------------
+        $('#vm-menu a').on('click',function(e){
+            e.preventDefault();
+            var href=$(this).attr('href');
+            if(href!=undefined && href!='' && href.substring(0,8)=="https://"){ window.open(href); return;}
+            if(href!=undefined && href!=''){
+                if($vm.menu_click!=undefined) $vm.menu_click(href);
+            }
+            $vm.toggle();
+        })
+        //------------------------------------
+        $vm.menu_click=function(href){
+            var prefix="";
+            href=href.replace('?\/','');
+            href=href.replace(/\//g,'_');
+            if(href=='home') prefix="";
+            $vm.load_module(prefix+href,$vm.root_layout_content_slot,{});
+        }
+        //------------------------------------
         $vm.header_ready=1;
         //------------------------------------
     </script>
     <style>
         /*----------------------*/
-        #header{
-            height:100px;
+        #header{display:none;
+        /*    height:100px;
             position:fixed;
             top:0;
             left:0;
             width:100%;
-            background:rgba(0,0,0,0.6);
-            z-index:10;
+            background:rgba(0, 0, 0, 0.69);
+            z-index:10;*/
         }
-        .vm-desk-logo{float:left;padding:0;cursor:pointer;}
+        .vm-desk-logo{float:left;padding:12px 0 0 30px;cursor:pointer;width:320px;}
         #vm-menu{ float:left;padding:50px 30px 0 30px;}
         @media screen and (max-width: 1200px){
-            #header{height:100px;}
+            #header{height:50px;}
             .vm-desk-logo{display:none;}
             #vm-menu{padding:0;}
         }
@@ -37,44 +69,26 @@
             --menu-color: #fff;
             --menu-hover-color: #29eca6;
             --menu-hover-background-color: #555;
+
             --dropdown-menu-color:#666;
             --dropdown-menu-background-color:#f9f9f9;
             --dropdown-menu-hover-color:#555;
             --dropdown-menu-hover-background-color:#ddd;
             --dropdown-menu-border-color:#ddd;
+
             --mobile-title-color:#fff;
             --mobile-hamburger-color:#fff;
             --mobile-menu-background-color:#1c3144;
         }
-        .vm-logo-image{
-            width:250px;
-            height:90px;
-            margin:5px 0 0 20px;
-            background: url('__CURRENT_PATH__/../components/images/logo_large.png') no-repeat top center;
-            background-size: cover;
-            /*float:left;*/
-            cursor:pointer;
-            /*z-index:20;*/
-        }
-        .vm-logo-image-small{
-            width:250px;
-            height:90px;
-            margin:5px 0 0 20px;
-            background: url('__CURRENT_PATH__/../components/images/logo_large.png') no-repeat top center;
-            background-size: cover;
-            /*float:left;*/
-            cursor:pointer;
-            /*z-index:20;*/
-        }
         #vm-logo-label-A{
-            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            font-family: 'Roboto Slab';
             color:#fff;
             font-size: 200%;
-            line-height:10px;
             display:inline-block;
         }
         #vm-logo-label-B{
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto Slab';
             color:#fff;
             font-size: 93%;
             line-height:80%;
@@ -154,16 +168,11 @@
         .vm-mobile{
             display:none;
         }
-        #header{ background-image: url(__CURRENT_PATH__/../components/images/desktop_banner_m.png);
-            opacity: 0.8;}
         /*----------------------*/
         @media screen and (max-width: 1200px) {
             .vm-mobile{
                 display:block;
             }
-            #header{ 
-                background-image: url(__CURRENT_PATH__/../components/images/mobile_banner.jpg);
-             }
             .vm-mobile-title{
                 color:var(--mobile-title-color);
                 font-size: 28px;
@@ -222,5 +231,59 @@
             from {max-height: 0px;}
             to {max-height: 1000px;}
         }
+        .navbar {
+            background-color: rgba(213, 210, 162,0) !important;
+            border-bottom: 1px solid #fff !important;
+            height: 80px;
+        }
+        .btn-outline-light {
+            font-family: 'Nunito Sans';
+            font-weight: 100;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 18px;
+            text-transform: uppercase;
+            border-radius: 15px;
+            border-width: 2px;
+            padding-left: 25px;
+            padding-right: 25px
+        }
+        .btn-outline-light:hover {
+            color: #23807F;
+        }
+        footer {
+            background-color: rgb(129, 81, 62) !important;
+            height: 147px !important;
+            padding-top: 35px;
+        }
+
+        footer img {
+            width: 170px;
+            height: auto;
+            float: right;
+            margin-left:50px;
+            margin-right:50px;
+            margin-bottom:10px;
+        }
+        .logos {
+            width: 250px;
+            height: auto;
+            float: right;
+            margin-left:5px;
+            margin-right:5px;
+        }
+        @media (min-width: 768px) {
+            footer {
+                height: 147px !important;
+            }
+        }
+        /*------------------------*/
     </style>
 </div>
+    
+
+
+
+

@@ -2,16 +2,10 @@
     <div>
         <form id=F__ID>
             <div id=S1__ID>
-                <div id=page1__ID class="row  mr-0 ml-0 p-4">
-                    <div class="col-lg-1 col-sm-0 ">
+                <div id=quest1__ID style='max-width:800px;margin-left:auto;margin-right:auto;margin-top:50px;background-color: white'>
+                    <div class="formbox text-center">
+                                <h3>LOCAL SLEEP Pre-screening questions</h3>
                     </div>
-                    <div class="col-lg-10 col-sm-12 text-center">
-                        <span ></span> <b>LOCAL SLEEP Pre-screening questions</b>
-                    </div>
-                    <div class="col-lg-1 col-sm-0 ">
-                    </div>
-                </div>
-                <div id=quest1__ID style='max-width:800px;margin-left:auto;margin-right:auto;'>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm control-group">
@@ -114,22 +108,16 @@
                             </fieldset>
                         </div>
                     </div>
-                    <div style="text-align:right">
-                        <button type="submit" d=1  style="background-color: #31b0d5; border-color: #269abc;" class="btn btn-info btn-lg">Next</button>
+                    <div style="text-align:right;padding:10px;">
+                        <button type="submit" d=1  style="background-color: #00263A; border-color: #00263A;" class="btn btn-info btn-lg">Next</button>
                     </div>
                 </div>
             </div>
             <div id=S2__ID>
-                <div id=page2__ID class="row  mr-0 ml-0 p-4" >
-                    <div class="col-lg-1 col-sm-0 ">
+                <div id=quest2__ID style='max-width:800px;margin-left:auto;margin-right:auto;margin-top:50px;background-color: white'>
+                    <div class="formbox text-center">
+                        <h3>Insomnia Severity Index</h3>
                     </div>
-                    <div class="col-lg-10 col-sm-12 text-center">
-                        <span ></span> <b>Insomnia Severity Index</b>
-                    </div>
-                    <div class="col-lg-1 col-sm-0 ">
-                    </div>
-                </div>
-                <div id=quest2__ID style='max-width:800px;margin-left:auto;margin-right:auto;'>
                     <div class="form-group">
                         <h4>1. Please rate the CURRENT (i.e. LAST 2 WEEKS) SEVERITY of your insomnia problem(s).</h4>
                         <div class="questiongroup ">
@@ -280,23 +268,24 @@
                             </fieldset>
                         </div>
                     </div>
-                    <div style="text-align:right">
-                        <button type="submit" d=1 style="background-color: #31b0d5; border-color: #269abc;" class="btn btn-info btn-lg">Submit</button>
+                    <div style="text-align:right;padding:10px;">
+                        <button type="submit" d=1 style="background-color: #00263A; border-color: #00263A;" class="btn btn-info btn-lg">Submit</button>
                     </div>
                 </div>
             </div>
             <div id=S3__ID>
-                <div class="row mr-0 ml-0 p-3" >
-                    <div class="col-lg-4 col-sm-0 text-center"></div>
-                    <div class="col-lg-4 col-sm-12 text-center">
-                        <span >Thank you for completing these questions. Based on the responses you have provided, you may be
+                <div style='max-width:800px;margin-left:auto;margin-right:auto;margin-top:50px;background-color: white'>
+                    <div class="formbox text-center">
+                        <h3>Contact Details</h3>
+                    </div>
+                    <div class="form-group">
+                        <div class="text-center">
+                            Thank you for completing these questions. Based on the responses you have provided, you may be
                             eligible for the research study.<br><br>
                             We will need to contact you to discuss this over the telephone. Please provide your phone number
                             and e-mail address and we will contact you shortly.
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-sm-0 text-center"></div>
-                </div>    
-                <div style='max-width:800px;margin-left:auto;margin-right:auto;'>
                     <div class="form-group">
                         <div class="questiongroup ">
                             <fieldset class="subquestions">
@@ -327,18 +316,18 @@
                             </fieldset>
                         </div>
                     </div>
-                    <div style="text-align:right">
-                        <button type="submit" id=submit1__ID d=1  style="background-color: #31b0d5; border-color: #269abc;" class="btn btn-info btn-lg">Submit</button>
+                    <div style="text-align:right;padding:10px;">
+                        <button type="submit" id=submit1__ID d=1  style="background-color: #00263A; border-color: #00263A;" class="btn btn-info btn-lg">Submit</button>
                     </div>
-                    <br>
-                    <hr>
-                    <div class="text-center">
-                        Contact Us
-                        <br><br>
-                        Phone: 9114 0000<br>
-                        Email: local-sleep@woolcock.org.au<br><br>
-                        Thanks you for your time and effort,<br>
-                        <b>The Local Sleep Research Team</b><br>
+                    <div class="form-group">
+                        <div class="text-center">
+                            Contact Us
+                            <br><br>
+                            Phone: 9114 0000<br>
+                            Email: local-sleep@woolcock.org.au<br><br>
+                            Thanks you for your time and effort,<br>
+                            <b>The Local Sleep Research Team</b><br>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -419,7 +408,7 @@
                 current_I = I;
                 $(window).scrollTop(0);
             }
-            //-------------------------------------
+           //-------------------------------------
             $('#mobileNumber__ID').on('change',function(){
                 var mn=$('#mobileNumber__ID').val();
                 if(mn.length==10){
@@ -442,13 +431,15 @@
     </script>
     <style>
         #D__ID {
-            font-family: 'Open Sans';
+            font-family: 'Roboto Slab';
             animation: vm_module_fadein 1.0s;
             color: #000;
-            background-color: #FFF;
             min-height: 800px;
         }
+        #quest1__ID{
+            background-color: #FFF;
 
+        }
         VmInclude:__CURRENT_PATH__/wappsystem-form.css
     </style>
 </div>
