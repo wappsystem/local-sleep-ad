@@ -279,7 +279,7 @@
                 console.log("here" + current_I)
                 event.preventDefault();
                 if (current_I == N - 1) {
-                    if ($("input[name='location']:checked").val() == 'N' || $("input[name='age']:checked").val() == 'N' || $("input[name='english']:checked").val() == 'N') {
+                    if ($("input[name='age']:checked").val() == 'N' || $("input[name='english']:checked").val() == 'N') {
                         $('#F__ID *').removeAttr('disabled');
                         old_submit(event);
                         if (m.prefix == undefined) { $vm.load_module('not_elig', '', {}); }
