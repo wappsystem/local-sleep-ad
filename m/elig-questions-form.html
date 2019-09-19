@@ -242,7 +242,7 @@
                 console.log("here" + current_I)
                 event.preventDefault();
                 if (current_I == N - 1) {
-                    if ($("input[name='age']:checked").val() == 'N' || $("input[name='english']:checked").val() == 'N') {
+                    if ($("input[name='age']:checked").val() == 'N' || $("input[name='OSA']:checked").val() == 'N' || $("input[name='try_cpap']:checked").val() == 'N' || $("input[name='english']:checked").val() == 'N' || $("input[name='driver_licence']:checked").val() == 'N' || $("input[name='visit_woolcock']:checked").val() == 'N' || $("input[name='cpap']:checked").val() == 'Y' || $("input[name='prof_driver']:checked").val() == 'Y') {
                         $('#F__ID *').removeAttr('disabled');
                         old_submit(event);
                         if (m.prefix == undefined) { $vm.load_module('not_elig', '', {}); }
