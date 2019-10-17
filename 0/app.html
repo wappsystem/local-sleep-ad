@@ -7,7 +7,7 @@
         $vm.api_address="https://api.wappsystem.com";
         if(window.location.toString().indexOf('_p=1')!=-1) $vm.api_address="https://api.wappsystem.com:3000";
         //------------------------------------
-        $vm.default_title="Cleverlights";
+        $vm.default_title="Local Sleep";
         //------------------------------------
         var ready1=function(){
             var set_layout=function(){                
@@ -27,7 +27,7 @@
                     var name=nm.charAt(0).toUpperCase() + nm.slice(1)
                     document.title=name+" | "+$vm.default_title;
                 }
-                $("meta[name='description']").attr("content", "Cleverlights");
+                $("meta[name='description']").attr("content", "SleepFix GP");
                 $("body").removeClass();
                 $("body").addClass('body_background_default');
                 $vm.active_id=undefined;
@@ -41,8 +41,6 @@
                     $('#D'+$vm.active_id).css('overflow','hidden');
                     $('#D'+$vm.active_id).css('overflow-x','auto');
                 }
-                $('#header').css('opacity','0');
-
             }
             //------------------------------------
             window.onresize=function(){set_layout();}
@@ -65,6 +63,6 @@
     <style main-style>
         html,body{ margin:0; padding:0; height:100%; font-family:'Arial';}
         body{background-size: cover; background-repeat: repeat-x; background-position: center top; background-attachment: fixed;}
-        .body_background_default{ background-image: url(__CURRENT_PATH__/../../images/background_image_m.jpg);}
+        .body_background_default{ background-color: #fff;}
     </style>
 </div>

@@ -1,33 +1,45 @@
 <div id=D__ID>
-	<div class='text-center' style='max-width:800px;margin-left:auto;margin-right:auto;'>
-		<img style="width:100%" src="images/logo_large.png"><br><br>
-		<h5>Welcome to the Cleverlights Research Study</h5>
-		We invite you to take part in an exciting new research study that involves being exposed to lighting to help improve your sleep at night and daytime alertness. 
-		<br><br>
-		<h5>Eligibility</h5>
-		You may be eligible to participate in this study if you:<br>
-		•	Are aged 50 or older<br>
-		•	Have difficulties with your sleep<br><br>
-		The clever lights used in the study have been designed to emit specific wavelengths of light that act on circadian rhythms that regulate your sleep. We are examining if using these lights will improve daytime alertness and night-time sleep. <br><br>
-		If eligible, you will be invited to come to the Woolcock Institute of Medical Research in Glebe, NSW and stay in one of our sleep suites for 3 days on two occasions. We will measure your sleep, circadian clock, cognition and alertness during the study. Participants who are eligible and complete all aspects of the study will be reimbursed $500 for their time. <br><br>
-		Your participation in this study is voluntary.<br><br>
-		<h5>I agree on completing a number of screening questionnaires to determine if I am suitable for the study.</h5>
-		
-		<br>
-		<button id="yes__ID"  class="btn btn-success btn-lg">I agree</button>
-		&nbsp;&nbsp;&nbsp;&nbsp;<button id="no__ID"  class="btn btn-outline-secondary">No thanks</button><br><br>
-		If you have any questions, please contact us on woolcock.cleverlights@sydney.edu.au or 02 9114 0421<br><br>
-	</div>
+    <div id=page__ID>
+        <div style='text-align: center;padding:20px'>
+            <!--<h1>Is your brain asleep while you’re awake?</h1>-->
+        </div>
+        <div class=columnbox__ID>
+            <h4>Local Sleep in Obstructive Sleep Apnea - Online Registration Questionnaire.</h4>
+            <h5><img src='images/local-sleep1.png' />Study information</h5>
+            <p>Help us to better understand if boosting overnight sleep by reducing obstructive sleep apnea (OSA) enhances brain function and performance.
+            </p>
+            <p>OSA is a common sleep disorder and is linked with excessive and inappropriate daytime sleepiness, impaired thinking, and an increased risk for motor vehicle crashes and workplace accidents. However, not all patients report the same level of daytime impairment and it is still not completely known how OSA affects the brain            
+			</p>
+            <p>A key to understanding this is by investigating the brain activity of patients with OSA, and how this may change following continuous positive airway pressure (CPAP) therapy, the gold standard clinical treatment for OSA. This can be easily done through non-invasive EEG recordings from electrodes placed on the scalp that are a routine part of sleep studies. This study uses advanced high-density electroencephalography to investigate whether areas of ‘tired’ neurons that fall asleep in the awake brain underlie daytime impairments in OSA. 
+            </p>
+            <p>The purpose of this study is to examine the effect of using CPAP therapy, at two different settings, on daytime function and brain wave activity recorded in patients diagnosed with moderate to severe OSA. We will investigate brain activity during sleep and during awake daytime performance testing and compare the effect of using CPAP devices that deliver pressure in different ways.
+			</p>
+			<p>This research is being carried out by researchers and doctors from the Woolcock Institute of Medical Research and the University of Sydney. The project is being funded by the Australian National Health and Medical Research Council Project Grant.
+			</p>
+			<p>This study has been approved by Sydney Local Health District Ethics Review committee (RPAH Zone).  Protocol Number X18-122.
+			</p>
+			<h5>I agree to complete a screening questionnaire to determine if I am suitable for the study </h5>
+			<div class=row>
+				<div class='col-6 p-2'><button id="yes__ID"  class="btn btn-defalut">I Agree</button></div>
+				<div class='col-6 p-2'><button id="no__ID"  class="btn btn-outline-secondary">No thanks</button></div>
+			</div>
+			<h5>Your participation in this study is voluntary.</h5>
+			<h5>If you have any questions, please contact us on 02 9114 0236 or sleep-research@woolcock.org.au</h5>
+		</div>
+
+
+    </div>
 	<script>
 		function F__ID(){
 			var m=$vm.module_list['__MODULE__'];
 			if(m.prefix==undefined) m.prefix="";
 			$('#yes__ID').on('click',function(){	$vm.load_module(m.prefix+'recruitment-form','',{});	})
-			$('#no__ID').on('click',function(){		$vm.alert("Completing questionnaires is necessary to be part of the study.") })
+			$('#no__ID').on('click',function(){		$vm.load_module(m.prefix + 'no-thanks', '', {}) });//$vm.alert("Completing questionnaires is necessary to be part of the study.") })
+
 		}
 		$vm.home_ready=1;
 	</script>
-	<style>
+    <style>
 		#D__ID{
 			font-family: 'Roboto Slab';
 			height:100%;
@@ -35,23 +47,27 @@
 	        padding-bottom:5%;
 			margin-top:-100px;
 			padding-top:80px;
-			color:#fff;
+			color:#000;
 		}
 		#yes__ID{
-			border-radius:2rem;
-			background-color: #13B51F;
+			border-radius:0.5rem;
+			color:#000;
+			background-color: rgb(0,124,144);
+			border-color: rgb(0,24,44);
+			font-size:1.2rem;
 			width:180px;height:60px;
-			font-family: Arial, Helvetica, sans-serif
+			font-family: 'Roboto Slab';
+			font-weight:900;
 		}
 		#no__ID{
-			border-radius:2rem;
+			border-radius:0.5rem;
 			width:180px;
 			height:60px;
 			font-size:1.2rem;
-			font-family: Arial, Helvetica, sans-serif;
+			font-family: 'Roboto Slab';
 			border-width: 2px;
-			border-color: #fff;
-			color:#fff;
+			border-color: #000;
+			color:#000;
 		}
 		#no__ID:hover{
 			background-color: rgb(0,0,0,0);
@@ -61,5 +77,41 @@
 	            animation: vm_module_fadein 1.0s;
 	        }
 	    }
-	</style>
+	    @media screen and (max-width: 720px) {
+			#yes__ID{
+				width:120px;height:60px;
+			}
+			#no__ID{
+				width:120px;height:60px;
+			}
+	    }
+		#D__ID{
+			height:100%;
+			animation: vm_module_fadein 1.0s;
+            background-color: #fff;
+		}
+        #page__ID{
+            max-width:1000px;
+            margin-left:auto;
+            margin-right:auto;
+            overflow-x: hidden;
+            padding-top:50px;'
+        }
+    	.columnbox__ID{
+    		column-count: 2;
+    		column-gap: 30px;
+            padding:0px;
+    	}
+        @media screen and (max-width: 1200px){
+            .columnbox__ID{
+                padding:15px;
+                column-count: 1;
+            }
+        }
+        .columnbox__ID img {
+            margin:10px 0;
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </div>
