@@ -180,10 +180,10 @@
                         <div class="questiongroup ">
                             <fieldset class="subquestions">
                                 <label><span class="">First name</span>
-                                    <input class="form-control" type="text" name="first_name">
+                                    <input class="form-control" type="text" name="first_name" required > 
                                 </label><br>
                                 <label><span class="">Last name</span>
-                                    <input class="form-control" type="text" name="last_name">
+                                    <input class="form-control" type="text" name="last_name" required >
                                 </label><br>
                             </fieldset>
                         </div>
@@ -192,7 +192,7 @@
                         <div class="questiongroup ">
                             <fieldset class="subquestions">
                                 <label style="width:100%"><span class="">Email Address</span>
-                                    <input class="form-control" type="email" name="email">
+                                    <input class="form-control" type="email" name="email" require >
                                 </label><br>
                             </fieldset>
                         </div>
@@ -202,7 +202,7 @@
                             <fieldset class="subquestions">
                                 <label><span class="">Phone number</span>
                                     <input type="tel" class="form-control" name="phone" id="mobileNumber__ID"
-                                        placeholder="XXXX-XXX-XXX" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}">
+                                        placeholder="XXXX-XXX-XXX" required>
                                 </label><br>
                             </fieldset>
                         </div>
@@ -295,13 +295,6 @@
                 $(window).scrollTop(0);
             }
             //-------------------------------------
-            $('#mobileNumber__ID').on('change', function () {
-                var mn = $('#mobileNumber__ID').val();
-                if (mn.length == 10) {
-                    $('#mobileNumber__ID').val(mn.substring(0, 4) + '-' + mn.substring(4, 7) + '-' + mn.substring(7, 10))
-                }
-            })
-            //-------------------------------------
             $("#D__ID input[name=OSA]").on('click', function () {
                 if ($("#D__ID input[name=OSA]:checked").val() == 'Y') {
                     $('#AHIQ__ID').show();
@@ -312,6 +305,27 @@
                     $('#AHI__ID').removeAttr('required');
                 }
             });
+            //--------------------------------------------------------
+            $('#mobileNumber__ID').keyup(function(e){
+                var ph = this.value.replace(/\D/g,'').substring(0,10);
+                // Backspace and Delete keys
+                var deleteKey = (e.keyCode == 8 || e.keyCode == 46);
+                var len = ph.length;
+                if(len==0){
+                    ph=ph;
+                }else if(len<4){
+                    ph=ph;
+                }else if(len==4){
+                    ph = ph + (deleteKey ? '' : '-');
+                }else if(len<7){
+                    ph=ph.substring(0,4)+'-'+ph.substring(4,7);
+                }else if(len==7){
+                    ph=ph.substring(0,4)+'-'+ph.substring(4,7)+ (deleteKey ? '' : '-');
+                }else{
+                    ph=ph.substring(0,4)+'-'+ph.substring(4,7)+'-'+ph.substring(7,10);
+                }
+                this.value = ph;
+            });            
             //-------------------------------------
         }
     </script>
