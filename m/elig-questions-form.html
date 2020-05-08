@@ -236,10 +236,10 @@
             var send_email = function (param) {
                 var url='https://prod-04.australiasoutheast.logic.azure.com:443/workflows/ec387e0686fc4cd0a449b1c51ebaab22/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=qE6IKUuRKlh302Vz3CI2olzI9vbZhE_QPRF8aabVDrc';
                 var data = {
-                    "emailaddress": "aaa@bbb.com",
-                    "first_name": "aaa",
-                    "last_name": "bbb",
-                    "phone_number": "123",
+                    "emailaddress": "" + param[0] + "",
+                    "first_name": "" + param[1] + "",
+                    "last_name": "" + param[2] + "",
+                    "phone_number": "" + param[3] + "",
                 }
                 var xmlHttp = new XMLHttpRequest();
                 xmlHttp.onreadystatechange = function () {
@@ -258,8 +258,13 @@
             //---------------------------------------
             m.before_submit = function (data, index) {
                 //-----------------------
-                //alert(111)
-                //send_email();
+                var param = [];
+                param.push(data.email); //0
+				param.push(data.first_name); //1
+				param.push(data.last_name); //2
+				param.push(data.phone); //3
+
+                send_email(param);
                 //-----------------------
                 return true;
             }
