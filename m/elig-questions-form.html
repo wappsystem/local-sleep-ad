@@ -42,11 +42,23 @@
                                     <span class="checkmark"></span>No </label><br>
                             </fieldset>
                         </div>
+                        <div id=AHIQ__ID class="questiongroup">Is your AHI level at least 15??
+                            <div class="questiongroup">
+                                <fieldset class="pl-4">
+                                    <label class="radiobuttons ">
+                                        <input type="radio" name="AHI" id="AHI__ID" value="Y" required>
+                                        <span class="checkmark"></span>Yes</label>
+                                    <label class="radiobuttons ">
+                                        <input type="radio" name="AHI" value="N">
+                                        <span class="checkmark"></span>No </label>
+                                </fieldset>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm control-group">
-                                <h4>Have you used, or are you currently using a Continuous Positive Airway Pressure
+                                <h4>Are you currently using a Continuous Positive Airway Pressure
                                     (CPAP) or Mandibular Advancement Device?
                                 </h4>
                             </div>
@@ -274,7 +286,7 @@
                 console.log("here" + current_I)
                 event.preventDefault();
                 if (current_I == N - 1) {
-                    if ($("input[name='age']:checked").val() == 'N' || $("input[name='OSA']:checked").val() == 'N' || $("input[name='try_cpap']:checked").val() == 'N' || $("input[name='english']:checked").val() == 'N' || $("input[name='driver_licence']:checked").val() == 'N' || $("input[name='visit_woolcock']:checked").val() == 'N' || $("input[name='cpap']:checked").val() == 'Y' || $("input[name='prof_driver']:checked").val() == 'Y') {
+                    if ($("input[name='age']:checked").val() == 'N' || $("input[name='OSA']:checked").val() == 'N' || ($("input[name='OSA']:checked").val() == 'Y' && $("input[name='AHI']:checked").val()=='N') || $("input[name='try_cpap']:checked").val() == 'N' || $("input[name='english']:checked").val() == 'N' || $("input[name='driver_licence']:checked").val() == 'N' || $("input[name='visit_woolcock']:checked").val() == 'N' || $("input[name='cpap']:checked").val() == 'Y' || $("input[name='prof_driver']:checked").val() == 'Y') {
                         $('#F__ID *').removeAttr('disabled');
                         old_submit(event);
                         if (m.prefix == undefined) { $vm.load_module('not_elig', '', {}); }
