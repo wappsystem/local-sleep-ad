@@ -1,5 +1,5 @@
 # local-sleep-ad
 Local Sleep Screening
   
-Production:    https://wappsystem.github.io/local-sleep-ad  
-Demonstration: https://wappsystem.github.io/local-sleep-ad?tb=demo
+Production:    https://local-sleep.wappsystem.com.au
+Demonstration: https://local-sleep.wappsystem.com.au?tb=demo
